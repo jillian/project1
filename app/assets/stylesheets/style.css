@@ -1,5 +1,5 @@
 body {
-  background-color: #C0C0C0; 
+  background-color: #7FFF00; 
 }
 
 nav {
@@ -20,10 +20,10 @@ nav ul li {
 #login{
   text-align: right;
 }
-nav a:link {color:white;}
-nav a:visited {color:white;}
-nav a:hover {color:#00FF00;}
-nav a:active {color:#0000FF;}
+nav a:link {color: #FF7F50 ; text-decoration: none;}
+nav a:visited {color: #FF7F50; text-decoration: none;}
+nav a:hover {color:white; text-decoration: none;}
+nav a:active {color: #FF7F50; text-decoration: none;}
 a:link{ 
   color: blue;
   font-family: 'Montserrat', sans-serif;}  
@@ -63,7 +63,8 @@ color: teal;
 th
 {
 background-color:teal;
-color:white;
+color: #7FFF00;
+text-align: left;
 }
 tr {
   border: 1px solid teal;
