@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  producer: 
+  location: 
+  program: 
+
+two:
+  name: MyString
+  producer: 
+  location: 
+  program: 

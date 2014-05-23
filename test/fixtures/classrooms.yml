@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  location: 
+  capacity: 1
+  facilities: MyText
+  name: MyString
+
+two:
+  location: 
+  capacity: 1
+  facilities: MyText
+  name: MyString

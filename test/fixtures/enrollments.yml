@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  cohort: 
+  confirmed: false
+  paid: false
+
+two:
+  cohort: 
+  confirmed: false
+  paid: false

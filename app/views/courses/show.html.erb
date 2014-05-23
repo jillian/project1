@@ -1,0 +1,29 @@
+
+
+<p>
+  <b>Name:</b>
+  <%= @course.name %>
+</p>
+
+<p>
+  <b>Producer:</b>
+  <%= @course.producer.first_name %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%= @course.location.name %>
+</p>
+
+<p>
+  <b>Program:</b>
+  <%= @course.program.name %>
+</p>
+
+
+
+<%= link_to 'Back', course_path %>
+</div>
+
+<%= link_to 'Edit', edit_course_path(@course) %> |
+<%= link_to 'Back', courses_path %>

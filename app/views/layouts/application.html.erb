@@ -1,14 +1,61 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Project1take2</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <link href='http://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
+  <title>Skedjuler</title>
+</head>
+<%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
-</head>
+
 <body>
+<nav class="navbar">
+  <ul>
+    <li><%= link_to "Locations", locations_path %></li>
+    <li><%= link_to "Programs", programs_path %></li>
+    <li><%= link_to "Courses", courses_path %></li>
+    <% if can? :read, Booking %>
+    <li><%= link_to "Bookings", bookings_path %></li>
+    <% end %>
+    <% if can? :read, Enrollment %>
+    <li><%= link_to "Enrollments", enrollments_path %></li>
+    <% end %>
+    <% if can? :read, Classroom %>
+    <li><%= link_to "Classrooms", users_path %></li>
+    <% end %>
+    <% if can? :read, Cohort %>
+    <li><%= link_to "Cohorts", cohorts_path %></li>
+    <% end %>
+    <% if can? :read, User %>
+    <li><%= link_to "Users", users_path %></li>
+    <% end %>
+    <% if can? :read, TeachingAssignment %>
+    <li><%= link_to "Teaching Assignments", teaching_assignments_path %></li>
+    <% end %>
+    <% if current_user  %>
+      <li>
+        <%= link_to "logout(#{current_user.email}) ", session_path(session), method: :delete, confirm: "Are you sure you'd like to logout?"%>
+      </li>
+    <% else %>
+      <li>
+      <%= link_to "Login", login_path %>
+      </li>
+      <li>
+      <%= link_to "Sign-up", new_user_path %>
+      </li>
+    <% end %>
+  </ul>
+</nav>
+
+<% flash.each do |name, message| %>
+  <div class="alert-box <%= name %>">
+    <%= message %>
+  </div>
+<% end %>
+
 
 <%= yield %>
 
 </body>
 </html>
+  

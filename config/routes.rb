@@ -1,4 +1,43 @@
 Project1take2::Application.routes.draw do
+  get "sessions/new"
+
+  get "sessions/create"
+
+  get "sessions/destroy"
+
+  root to: "welcome#index"
+
+  get 'login', to: 'sessions#new'
+  
+  resources :sessions, only: [:new, :create, :destroy]
+
+  resources :courses
+
+
+  resources :bookings
+
+
+  resources :teaching_assignments
+
+
+  resources :enrollments
+
+
+  resources :cohorts
+
+
+  resources :classrooms
+
+
+  resources :programs
+
+
+  resources :locations
+
+
+  resources :users
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Cohort:</b>
+  <%= @enrollment.cohort %>
+</p>
+
+<p>
+  <b>Confirmed:</b>
+  <%= @enrollment.confirmed %>
+</p>
+
+<p>
+  <b>Paid:</b>
+  <%= @enrollment.paid %>
+</p>
+
+
+<%= link_to 'Edit', edit_enrollment_path(@enrollment) %> |
+<%= link_to 'Back', enrollments_path %>

@@ -1,0 +1,28 @@
+<h1>Enrollments</h1>
+
+<table>
+  <tr>
+    <th>Cohort</th>
+    <th>Confirmed</th>
+    <th>Paid</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @enrollments.each do |enrollment| %>
+  <tr>
+    <td><%= enrollment.cohort.name %></td>
+    <td><%= enrollment.confirmed %></td>
+    <td><%= enrollment.paid %></td>
+    <td><%= link_to 'Show', enrollment %></td>
+    <td><%= link_to 'Edit', edit_enrollment_path(enrollment) %></td>
+    <td><%= link_to 'Destroy', enrollment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<% if can? :manage, Enrollment %>
+<%= link_to 'New Enrollment', new_enrollment_path %>
+<% end %> 
