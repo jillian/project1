@@ -12,8 +12,8 @@
 
 <% @teaching_assignments.each do |teaching_assignment| %>
   <tr>
-    <td><%= teaching_assignment.cohort %></td>
-    <td><%= teaching_assignment.user %></td>
+    <td><%= teaching_assignment.cohort.name %></td>
+    <td><%= teaching_assignment.teacher.first_name %></td>
     <td><%= teaching_assignment.salary %></td>
     <td><%= link_to 'Show', teaching_assignment %></td>
     <td><%= link_to 'Edit', edit_teaching_assignment_path(teaching_assignment) %></td>

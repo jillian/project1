@@ -29,6 +29,7 @@ end
 
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'jquery-rails'
+# gem 'ruby '2.0.0'
 
 
 # To use Jbuilder templates for JSON

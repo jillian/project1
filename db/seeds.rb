@@ -1,14 +1,3 @@
-User.delete_all
-Program.delete_all
-Location.delete_all
-Course.delete_all
-Classroom.delete_all
-Cohort.delete_all
-Booking.delete_all
-TeachingAssignment.delete_all
-Enrollment.delete_all
-
-
 student1 = User.create!(first_name: 'Jillian', last_name: 'Mac', email: 'jillian@mac.com', password: "password", password_confirmation: "password", role: 'student')
 student2 = User.create!(first_name: 'Will', last_name: 'Smith', email: 'will@smith.com', password: "password", password_confirmation: "password", role: 'student')
 student3 = User.create!(first_name: 'Bruno', last_name: 'Gagliasso', email: 'bruno@gagliasso.com', password: "password", password_confirmation: "password", role: 'student')

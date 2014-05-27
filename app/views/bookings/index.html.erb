@@ -18,9 +18,10 @@
     <td><%= booking.start_date %></td>
     <td><%= booking.end_date %></td>
     <td><%= link_to 'Show', booking %></td>
-    <% if can? M
+    <% if can? :manage, Booking %>
     <td><%= link_to 'Edit', edit_booking_path(booking) %></td>
     <td><%= link_to 'Destroy', booking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% end %>
   </tr>
 <% end %>
 </table>
