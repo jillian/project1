@@ -1,14 +1,16 @@
 class User < ActiveRecord::Base
   attr_accessible :email, :first_name, :last_name, :role, :password, :password_confirmation
 
-  validates :email, presence: true, uniqueness: true
+  validates :email, presence: true, 
+  uniqueness: true, 
+  :format => { :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i }  
 
   def role?(role)
     self.role.to_s == role.to_s
   end
 
   has_secure_password
-  validates :email, presence: true, uniqueness: true
+  validates :email, presence: true, uniqueness: true, format
 
   has_many :enrollments, foreign_key: :student_id
   has_many :studied_cohorts, through: :enrollments, source: :cohort
