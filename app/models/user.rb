@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   end
 
   has_secure_password
-  validates :email, presence: true, uniqueness: true, format
+  validates :email, presence: true, uniqueness: true
 
   has_many :enrollments, foreign_key: :student_id
   has_many :studied_cohorts, through: :enrollments, source: :cohort

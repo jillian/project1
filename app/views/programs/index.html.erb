@@ -15,7 +15,7 @@
     <td><%= program.name %></td>
     <td><%= program.description %></td>
     <% if can? :manage, Program %>
-    <td><%= link_to 'Show', program %></td>
+    <td><%= link_to 'Details', show_program_path %></td>
     <% end %>
     <% if can? :manage, Program %>
     <td><%= link_to 'Edit', edit_program_path(program) %></td>
