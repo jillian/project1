@@ -1,5 +1,4 @@
 <h1>Programs</h1>
-
 <table>
   <tr>
     <th>Name</th>
@@ -8,27 +7,22 @@
     <th></th>
     <th></th>
   </tr>
-
-
 <% @programs.each do |program| %>
   <tr>
     <td><%= program.name %></td>
     <td><%= program.description %></td>
     <% if can? :manage, Program %>
-    <td><%= link_to 'Details', show_program_path %></td>
+    <td><%= link_to 'Show', program_path %></td>
     <% end %>
     <% if can? :manage, Program %>
     <td><%= link_to 'Edit', edit_program_path(program) %></td>
     <% end %>
     <% if can? :manage, Program %>
-    <td><%= link_to 'Destroy', program, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    <% end %>
+    <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+     <% end %>
   </tr>
 <% end %>
 </table>
-
-<br />
-
-<% if can? :manage, Program %>
-<%= link_to 'New Program', new_program_path %>
+<% if can? :manage, Program  %>
+  <%= link_to 'New Program', new_program_path %>
 <% end %>

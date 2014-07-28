@@ -1,5 +1,4 @@
 <h1>Locations</h1>
-
 <table>
   <tr>
     <th>Name</th>
@@ -7,13 +6,12 @@
     <th></th>
     <th></th>
   </tr>
-
 <% @locations.each do |location| %>
   <tr>
-    <td><%= location.name %></td>
-    <% if can? :manage, Location %>
-    <td><%= link_to 'Show', location %></td>
-    <% end %>
+    <div id="location_name">
+      <td><%= location.name %></td>
+    </div>
+
     <% if can? :manage, Location %>
     <td><%= link_to 'Edit', edit_location_path(location) %></td>
     <% end %>

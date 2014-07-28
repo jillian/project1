@@ -1,0 +1,27 @@
+%h1 Klassrooms
+
+%table
+  %tr
+    %th Location
+    %th Capacity
+    %th Facilities
+    %th Name
+    %th 
+    %th 
+    %th 
+
+
+= @classrooms.each do |classroom| 
+  %tr%
+    %td = classroom.location 
+    %td = classroom.capacity 
+    %td = classroom.facilities
+    %td = classroom.name
+    = if can? :manage, Classroom 
+      %td = link_to 'Show', classroom
+    = if can? :manage, Classroom 
+      %td = link_to 'Edit', edit_classroom_path(classroom)
+    = if can? :manage, Classroom 
+      %td = link_to 'Destroy', classroom, method: :delete, data: { confirm: 'Are you sure?' } 
+
+= link_to 'New Classroom', new_classroom_path 

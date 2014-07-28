@@ -1,0 +1,24 @@
+%h1 Bookings
+
+%table
+  %tr
+    %th Cohort
+    %th Classroom
+    %th Start Date
+    %th End Date
+    %th Show
+    %th Edit
+    %th Destroy
+
+= @bookings.each do |booking| 
+  %tr
+    %td> = booking.cohort.name 
+    %td> = booking.classroom.name 
+    %td> = booking.start_date %>
+    %td> = booking.end_date %>
+    %td> = link_to 'Show', booking
+    = if can? :manage, Booking 
+        %td>= link_to 'Edit', edit_booking_path(booking)
+    %td = link_to 'Destroy', booking, method: :delete, data: { confirm: 'Are you sure?' }
+
+= link_to 'New Booking', new_booking_path
